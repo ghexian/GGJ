@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class WelcomeWnd : MonoBehaviour {
     private Transform startGameBtn;
+    
     void Awake()
     {
         startGameBtn = this.transform.Find("Button");
+        BindEvent();
     }
     void BindEvent()
     {
@@ -14,6 +16,6 @@ public class WelcomeWnd : MonoBehaviour {
     }
     void OnStartGameBtnClick(GameObject _obj)
     {
-        
+        Manager.instance.SettingEnter();
     }
 }
