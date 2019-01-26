@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour {
 
     public float speed;
     public float switchIdle;
+    public string hometown; //家乡城市ID
 
     private void Awake()
     {

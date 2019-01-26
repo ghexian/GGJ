@@ -4,9 +4,11 @@ using UnityEngine;
 using System.IO;
 
 public enum GAMESTATE { WELCOME, SETTING, MAP, END }
+public enum GAMELEVEL { EASY, MEDIUM, HARD }
 
 public class Manager : MonoBehaviour {
     private GAMESTATE state;
+    
     public WelcomeWnd welcomeWnd;
     public SettingWnd settingWnd;
     public MapWnd mapWnd;
@@ -14,6 +16,7 @@ public class Manager : MonoBehaviour {
     [HideInInspector]
     public Dictionary<string, City> cityMap;
     public static Manager instance;
+    public GAMELEVEL level; //难度
     void Init()
     {
         //初始化读表数据
@@ -134,6 +137,7 @@ public class Manager : MonoBehaviour {
             price = str[4].Split(':');
             for(int j = 0; j < adjs.Length; ++j)
             {
+
                 if (city.adjs.ContainsKey(adjs[j]))
                     continue;
                 //city.adjs.Add(adjs[j], new Edge(adjs[j], int.Parse(price[j])));
