@@ -19,6 +19,11 @@ public class City
             adjs.Add(new Edge(endCityIds[i]));
         }
     }
+
+    public Dictionary<string, City> CityMap()
+    {
+        return null;
+    }
 }
 
 public class Edge
